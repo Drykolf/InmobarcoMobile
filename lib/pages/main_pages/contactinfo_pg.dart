@@ -5,7 +5,7 @@ class ContactInfoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
         child: Text('Contact Info Page'),
       );
   }
