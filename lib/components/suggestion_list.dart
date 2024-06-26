@@ -14,29 +14,27 @@ class SuggestionList extends StatefulWidget {
 class _SuggestionListState extends State<SuggestionList> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(widget.title!, style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold
-              ),),
-              TextButton(onPressed: (){}, child: const Text("Ver mas"))
-            ],
-          ),
-          const SizedBox(height: 12,),
-          Container(
-            height: 340,
-            width: double.infinity,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal, 
-              itemCount: widget.items.length, 
-              itemBuilder: (context, index)=>ItemCard(widget.items[index], (){}),),
-          )
-        ],
-      ),
+    return Column(
+      children: [
+        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(widget.title!, style: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold
+            ),),
+            TextButton(onPressed: (){}, child: const Text("Ver mas"))
+          ],
+        ),
+        const SizedBox(height: 12,),
+        SizedBox(
+          height: 340,
+          width: double.infinity,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal, 
+            itemCount: widget.items.length, 
+            itemBuilder: (context, index)=>ItemCard(widget.items[index], (){}),),
+        )
+      ],
     );
   }
 }

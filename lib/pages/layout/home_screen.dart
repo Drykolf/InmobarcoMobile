@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:inmobarcomobile/components/bottom_nav_bar.dart';
+import 'package:inmobarcomobile/components/home_navbar.dart';
 import 'package:inmobarcomobile/components/drawer.dart';
 import 'package:inmobarcomobile/components/top_appbar.dart';
-import 'package:inmobarcomobile/pages/contactInfo_pg.dart';
+import 'package:inmobarcomobile/pages/main_pages/contactInfo_pg.dart';
 import 'package:inmobarcomobile/pages/main_pages/home_pg.dart';
 import 'package:inmobarcomobile/pages/main_pages/profile_pg.dart';
 import 'package:inmobarcomobile/pages/main_pages/saved_pg.dart';
 import 'package:inmobarcomobile/pages/main_pages/search_pg.dart';
 
-class MainPage extends StatefulWidget {
-  const MainPage({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<MainPage> createState() => _MainPageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
   void navigateBottomBar(int index) {
@@ -36,7 +36,7 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       appBar: const TopAppBar(),
       body: _pages[_selectedIndex],
-      bottomNavigationBar: MyBottomNavBar(
+      bottomNavigationBar: HomeNavbar(
         onTabChange: (index) => navigateBottomBar(index),
       ),
       drawer: const AppDrawer()

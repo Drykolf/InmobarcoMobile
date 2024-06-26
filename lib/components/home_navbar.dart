@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:inmobarcomobile/constants/colors.dart';
 
-class MyBottomNavBar extends StatelessWidget {
+class HomeNavbar extends StatelessWidget {
   final void Function(int)? onTabChange;
-  const MyBottomNavBar({super.key, required this.onTabChange});
+  const HomeNavbar({super.key, required this.onTabChange});
 
   @override
   Widget build(BuildContext context) {
