@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:inmobarcomobile/pages/layout/home_screen.dart';
+import 'package:inmobarcomobile/pages/doc_pages/tenant_ct_pg.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 import 'package:intl/intl_standalone.dart' if (dart.library.html) 'package:intl/intl_browser.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await findSystemLocale();
-  runApp(const MyApp());
+  initializeDateFormatting('es_MX', null).then((_) => runApp(const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Quicksand',
         primarySwatch: Colors.blue),
-      home: const HomeScreen()
+      home: const TenantCtPage()
     );
   }
 }
